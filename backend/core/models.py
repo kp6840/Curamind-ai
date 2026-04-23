@@ -22,9 +22,9 @@ class Patient(models.Model):
 # -------------------------------
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    specialization = models.CharField(max_length=100)
-    experience = models.IntegerField()
-    hospital = models.CharField(max_length=100)
+    specialization = models.CharField(max_length=100, null=True, blank=True)
+    experience = models.IntegerField(null=True, blank=True)
+    hospital = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self):
         return self.user.username
@@ -39,6 +39,8 @@ class MedicalRecord(models.Model):
 
     diagnosis = models.TextField()
     prescription = models.TextField()
+
+    file = models.FileField(upload_to='records/', null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
