@@ -1,0 +1,60 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "view",
+        "create",
+        "update",
+        "delete",
+        "access_attempt",
+        "login",
+        "logout",
+        "export",
+        "ai_analysis"
+      ],
+      "description": "Type of action performed"
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "What type of record was acted upon"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "ID of the affected record"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email of user who performed the action"
+    },
+    "user_role": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the action"
+    },
+    "ip_address": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ],
+      "default": "info"
+    },
+    "metadata": {
+      "type": "string",
+      "description": "Additional JSON metadata"
+    }
+  },
+  "required": [
+    "action",
+    "description"
+  ]
+}

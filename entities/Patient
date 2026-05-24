@@ -1,0 +1,82 @@
+{
+  "name": "Patient",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Patient's full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Patient email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female",
+        "other"
+      ],
+      "description": "Gender"
+    },
+    "blood_type": {
+      "type": "string",
+      "enum": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ],
+      "description": "Blood type"
+    },
+    "allergies": {
+      "type": "string",
+      "description": "Known allergies"
+    },
+    "medical_history": {
+      "type": "string",
+      "description": "Brief medical history"
+    },
+    "emergency_contact_name": {
+      "type": "string"
+    },
+    "emergency_contact_phone": {
+      "type": "string"
+    },
+    "insurance_provider": {
+      "type": "string"
+    },
+    "insurance_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "discharged"
+      ],
+      "default": "active"
+    },
+    "avatar_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "full_name",
+    "email"
+  ]
+}

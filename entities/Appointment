@@ -1,0 +1,65 @@
+{
+  "name": "Appointment",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to patient"
+    },
+    "patient_name": {
+      "type": "string"
+    },
+    "doctor_id": {
+      "type": "string",
+      "description": "Reference to doctor"
+    },
+    "doctor_name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Appointment date"
+    },
+    "time": {
+      "type": "string",
+      "description": "Appointment time slot"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "consultation",
+        "follow_up",
+        "imaging",
+        "telehealth",
+        "emergency"
+      ],
+      "default": "consultation"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "confirmed",
+        "in_progress",
+        "completed",
+        "cancelled",
+        "no_show"
+      ],
+      "default": "scheduled"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for visit"
+    }
+  },
+  "required": [
+    "patient_name",
+    "doctor_name",
+    "date",
+    "time"
+  ]
+}

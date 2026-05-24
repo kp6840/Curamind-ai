@@ -1,0 +1,65 @@
+{
+  "name": "Doctor",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Doctor's full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Doctor email"
+    },
+    "specialization": {
+      "type": "string",
+      "enum": [
+        "radiology",
+        "cardiology",
+        "neurology",
+        "orthopedics",
+        "oncology",
+        "general_practice",
+        "dermatology",
+        "pediatrics"
+      ],
+      "description": "Medical specialization"
+    },
+    "license_number": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "years_of_experience": {
+      "type": "number"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "available",
+        "busy",
+        "off_duty"
+      ],
+      "default": "available"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "specialization"
+  ]
+}

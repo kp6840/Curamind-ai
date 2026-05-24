@@ -1,0 +1,85 @@
+{
+  "name": "DiagnosticReport",
+  "type": "object",
+  "properties": {
+    "medical_record_id": {
+      "type": "string"
+    },
+    "patient_id": {
+      "type": "string"
+    },
+    "patient_name": {
+      "type": "string"
+    },
+    "doctor_id": {
+      "type": "string"
+    },
+    "doctor_name": {
+      "type": "string"
+    },
+    "image_type": {
+      "type": "string",
+      "enum": [
+        "xray",
+        "mri",
+        "ct_scan",
+        "ultrasound",
+        "pathology"
+      ]
+    },
+    "ai_findings": {
+      "type": "string",
+      "description": "AI-generated findings"
+    },
+    "ai_confidence": {
+      "type": "number"
+    },
+    "ai_anomalies_detected": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "doctor_review": {
+      "type": "string",
+      "description": "Doctor's formal review"
+    },
+    "doctor_agrees_with_ai": {
+      "type": "boolean"
+    },
+    "final_diagnosis": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ai_processing",
+        "pending_review",
+        "reviewed",
+        "finalized"
+      ],
+      "default": "ai_processing"
+    },
+    "recommendations": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patient_name",
+    "image_type"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "name": "MedicalRecord",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string"
+    },
+    "patient_name": {
+      "type": "string"
+    },
+    "doctor_id": {
+      "type": "string"
+    },
+    "doctor_name": {
+      "type": "string"
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "xray",
+        "mri",
+        "ct_scan",
+        "ultrasound",
+        "lab_result",
+        "prescription",
+        "clinical_note",
+        "pathology"
+      ],
+      "description": "Type of medical record"
+    },
+    "title": {
+      "type": "string",
+      "description": "Record title"
+    },
+    "description": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of uploaded medical image/document"
+    },
+    "diagnosis": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending_review",
+        "under_review",
+        "reviewed",
+        "flagged"
+      ],
+      "default": "pending_review"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "routine",
+        "urgent",
+        "critical"
+      ],
+      "default": "routine"
+    },
+    "ai_analysis_status": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "processing",
+        "completed",
+        "failed"
+      ],
+      "default": "not_started"
+    },
+    "ai_findings": {
+      "type": "string",
+      "description": "AI-generated analysis findings"
+    },
+    "ai_confidence_score": {
+      "type": "number",
+      "description": "AI confidence percentage"
+    }
+  },
+  "required": [
+    "patient_name",
+    "record_type",
+    "title"
+  ]
+}
